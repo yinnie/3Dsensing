@@ -10,9 +10,21 @@ public:
 	void setup();
 	void update();
 	void draw();
-	void exit();
 	
-	ofxOpenNI openni;
+    bool quiet;
+    bool debug;
+    float angle, distance;
+    float preangle, diff;
+	ofVec3f ConvertProjectiveToRealWorld(const XnPoint3D& p);
+	
+	ofxOpenNIContext openni;
+	ofxDepthGenerator depth;
+	ofxImageGenerator image;
+	ofxUserGenerator user;
 	ofxOscSender osc;
-	float distance;
+    
+    ofSoundPlayer beat;
+    ofTrueTypeFont verdana;
+
+    
 };

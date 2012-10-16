@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ofxOpenCv.h"
 #include "ofxKinect.h"
 
 class testApp : public ofBaseApp {
@@ -15,4 +16,7 @@ public:
 	ofxKinect kinect;
 	ofEasyCam easyCam;
 	bool useProjective;
+    
+    //you dont wan to just use brightness as Z of the points..
+    //what you want to do is to project it..projection...your hand stays same size no matter where you put it
 };
