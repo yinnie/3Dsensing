@@ -9,11 +9,12 @@ void testApp::setup(){
     vector<string> stuff = ofSplitString(import, "\n");
     n = stuff.size();
 
-    raw.resize(n);  //initiate raw (a vector) using resize
+    //raw.resize(n);  //initiate raw (a vector) using resize
     
     for(int i = 0; i<n; i++) {
         vector<string> split = ofSplitString(stuff[i], ",");
-        raw[i] = ofPoint(ofToFloat(split[0]), ofToFloat(split[1]), ofToFloat(split[2]));
+        //raw[i] = ofPoint(ofToFloat(split[0]), ofToFloat(split[1]), ofToFloat(split[2]));
+        raw.push_back(ofPoint(ofToFloat(split[0]), ofToFloat(split[1]), ofToFloat(split[2])));
     }
    
     ofBackground(255);
@@ -26,7 +27,6 @@ void testApp::update(){
 
 void testApp::draw(){
 
-    
     cam.begin();
     ofSetColor(0, 0, 0);
     ofFill();
@@ -37,4 +37,5 @@ void testApp::draw(){
      }
     mesh.draw();
     cam.end();
+    
 }

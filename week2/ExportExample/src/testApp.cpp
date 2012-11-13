@@ -6,7 +6,7 @@ void testApp::setup() {
 	kinect.setRegistration(true); //keeps the depth image aligned with color image
     //covert the info between this range to color data
     //below set the range...but we still have access to data outside of range
-	kinect.setDepthClipping(500, 1500);  //real world..50cm to 1.5meters
+	kinect.setDepthClipping(500, 1000);  //real world..50cm to 1.5meters
 	kinect.open();
 }
 
@@ -26,7 +26,7 @@ void testApp::update() {
 					img.setColor(x, y, ofColor(color, depth.getBrightness()));
 				}
 			}
-			img.saveImage("out.png");
+			img.saveImage("9.png");
 		}
 	}
 }
